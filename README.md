@@ -1,3 +1,8 @@
+# Vim-like-VSCode
+
+### Collection of some awesome plugins for vim which makes it work almost like vscode.
+
+
 Install [pathogen](https://github.com/tpope/vim-pathogen) 
 
 Install [vimrc](https://github.com/amix/vimrc)
@@ -76,9 +81,10 @@ add following variables to your `~/.vim_runtime/my_configs.vim` file
  let NERDTreeMapOpenInTab='<ENTER>'
  
  nmap <C-k> <plug>NERDCommenterToggle
- map <C-m> :NERDTreeToggle<cr>
- 
- 
+ map <C-n> :NERDTreeToggle<cr>
+ nmap <C-m> :NERDTreeFind<CR>
+        
+        
  au TabLeave * let g:lasttab = tabpagenr()
  nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
  vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
@@ -93,7 +99,8 @@ add following variables to your `~/.vim_runtime/my_configs.vim` file
 Usefull Commands : 
 - `:MRU (OR ,f)` open recently closed files
 - `:MRU pattern (OR ,f pattern)` open most recent files matching that pattern
-- `Ctrl + m` opens up file explorer
+- `Ctrl + n` opens up file explorer
+- `Ctrl + m` opens up current file explorer
 - `Ctrl + ww` toggle between file explorer and main file
 - `Ctrl + f`  search files
 - `Git <git command>` for all awesome git stuff inside your vim
