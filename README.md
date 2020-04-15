@@ -104,7 +104,7 @@ Usefull Commands :
 - `Ctrl + ww` toggle between file explorer and main file
 - `Ctrl + f`  search files
 - `Git <git command>` for all awesome git stuff inside your vim
-- `Ctrl + l` toggle comment line 
+- `Ctrl + k` toggle comment line 
 - `count Ctrl + k` toggle number of lines ex `2 Ctrl+k` comments 2 lines.
 - `,w` writes changes to file
 - `Ctrl + l` open last tab
