@@ -8,6 +8,8 @@ Install [CoC](https://github.com/neoclide/coc.nvim) via pathogen.
 
 RUN `~/.vim/bundle/coc.nvim/install.sh`
 
+Install [vim-nerdtree-dirente](https://github.com/Nopik/vim-nerdtree-direnter)
+
 In your vim/neovim, run command:
 
 ```
@@ -59,6 +61,7 @@ add following variables to your `~/.vim_runtime/my_configs.vim` file
  
  autocmd FileType json syntax match Comment +\/\/.\+$+
  
+ 
  let g:NERDTreeWinPos = "left"
  let g:NERDSpaceDelims = 1
  let g:NERDCompactSexyComs = 1
@@ -68,10 +71,21 @@ add following variables to your `~/.vim_runtime/my_configs.vim` file
  let g:NERDCommentEmptyLines = 1
  let g:NERDTrimTrailingWhitespace = 1
  let g:NERDToggleCheckAllLines = 1
+ let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint']}
+ let g:ale_fix_on_save = 1
+ let NERDTreeMapOpenInTab='<ENTER>'
  
- nmap <C-l> <plug>NERDCommenterToggle
- nmap <C-l> <plug>NERDCommenterToggle
- nmap <C-m> :NERDTreeToggle<CR>
+ nmap <C-k> <plug>NERDCommenterToggle
+ map <C-m> :NERDTreeToggle<cr>
+ 
+ 
+ au TabLeave * let g:lasttab = tabpagenr()
+ nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+ vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+ nnoremap H gT
+ nnoremap L gt
+ 
+
 
 ```
 
@@ -84,5 +98,12 @@ Usefull Commands :
 - `Ctrl + f`  search files
 - `Git <git command>` for all awesome git stuff inside your vim
 - `Ctrl + l` toggle comment line 
-- `count Ctrl + l` toggle number of lines ex `2 Ctrl+l` comments 2 lines.
+- `count Ctrl + k` toggle number of lines ex `2 Ctrl+k` comments 2 lines.
 - `,w` writes changes to file
+- `Ctrl + l` open last tab
+- `Shift + h` navigates to previous tab
+- `Shift + l` navigates to next tab
+
+
+
+Most of the plugins and configs can be found here [vimrc](https://github.com/amix/vimrc)
