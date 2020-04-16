@@ -114,3 +114,4 @@ Usefull Commands :
 
 
 Most of the plugins and configs can be found here [vimrc](https://github.com/amix/vimrc)
+More usefull vim shortcuts can be found here [vim-keyboard-shortcuts](http://keyxl.com/aaa8263/290/vim-keyboard-shortcuts)
