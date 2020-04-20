@@ -147,3 +147,21 @@ N - Searches your text again in the opposite direction
 Once you’ve selected a particular range of text, you can then run a command on that text such as the following:
 
 `d` - delete marked text y - yank (copy) marked text > - shift text right < - shift text left ~ - swap case (upper or lower)
+
+## 7. Insert Mode (i)
+
+`<Esc>` or `CTRL-C` exit insert mode
+`CTRL-H` Delete the character before the cursor
+`CTRL-W` Delete the word before the cursor
+`CTRL-U` Delete all entered characters in the current line
+`CTRL-J` Begin new line
+`CTRL-N` Find next keyword
+`CTRL-P` Find previous keyword
+`CTRL-T` shift entire line to next indent
+`CTRL-D` delete 1 indent in entire line
+`CTRL-E` scroll window one line up.
+`CTRL-Y` scroll window one line down.
+`<S-Left>`	cursor one word back (like "b" command)	 
+`<C-Left>`	cursor one word back (like "b" command)	
+`<S-Right>`	cursor one word forward (like "w" command)
+`<C-Right>`	cursor one word forward (like "w" command)
