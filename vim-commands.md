@@ -60,6 +60,10 @@ The most simple commands allow you to open and close documents as well as saving
 
 `#` - Where # is the number of a line, this command takes you to the line specified
 
+`ctrl + d` (scroll window downwards, normally half a a screen)
+
+`ctrl + u` (scroll window upwards, normally half a a screen)
+
 ## 3. Vim commands for editing
 
 `yy` - Copies a line
