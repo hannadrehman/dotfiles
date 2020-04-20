@@ -42,6 +42,10 @@ The most simple commands allow you to open and close documents as well as saving
 
 `$` - Places the cursor at the end of a line
 
+`o` - insert new line below and go to insert mode
+
+`O` - insert new line below and go to insert mode
+
 `)` - Takes you to the start of the next sentence
 
 `(` - Takes you to the start of the previous sentence
@@ -156,32 +160,32 @@ Once you’ve selected a particular range of text, you can then run a command on
 
 `<Esc>` or `CTRL-C` exit insert mode
 
-`CTRL-H` Delete the character before the cursor
+`CTRL-H` - Delete the character before the cursor
 
-`CTRL-W` Delete the word before the cursor
+`CTRL-W` - Delete the word before the cursor
 
-`CTRL-U` Delete all entered characters in the current line
+`CTRL-U` - Delete all entered characters in the current line
 
-`CTRL-J` Begin new line
+`CTRL-J` - Begin new line
 
-`CTRL-N` Find next keyword
+`CTRL-N` - Find next keyword
 
-`CTRL-P` Find previous keyword
+`CTRL-P` - Find previous keyword
 
-`CTRL-T` shift entire line to next indent
+`CTRL-T` - shift entire line to next indent
 
-`CTRL-D` delete 1 indent in entire line
+`CTRL-D` - delete 1 indent in entire line
 
-`CTRL-E` scroll window one line up.
+`CTRL-E` - scroll window one line up.
 
-`CTRL-Y` scroll window one line down.
+`CTRL-Y` - scroll window one line down.
 
-`<S-Left>`	cursor one word back (like "b" command)	 
+`<S-Left>` -	cursor one word back (like "b" command)	 
 
-`<C-Left>`	cursor one word back (like "b" command)	
+`<C-Left>` -	cursor one word back (like "b" command)	
 
-`<S-Right>`	cursor one word forward (like "w" command)
+`<S-Right>` -	cursor one word forward (like "w" command)
 
-`<C-Right>`	cursor one word forward (like "w" command)
+`<C-Right>` -	cursor one word forward (like "w" command)
 
 
