@@ -18,10 +18,16 @@ Install [vim-nerdtree-dirente](https://github.com/Nopik/vim-nerdtree-direnter)
 In your vim/neovim, run command:
 
 ```
-:CocInstall coc-tsserver
 :CocConfig
 
 ```
+if you need to add typescript support then add 
+
+```
+:CocInstall coc-tsserver
+
+```
+
 which should open a config json. paste the following in the config 
 ```
 {
