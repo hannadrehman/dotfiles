@@ -61,21 +61,21 @@ which should open a config json. paste the following in the config
 add following variables to your `~/.vim_runtime/my_configs.vim` file
 
 ```
- filetype plugin on
- filetype plugin indent on
+filetype plugin on                
+ filetype plugin indent on         
  
  autocmd FileType json syntax match Comment +\/\/.\+$+
- 
- 
- let g:NERDTreeWinPos = "left"
- let g:NERDSpaceDelims = 1
- let g:NERDCompactSexyComs = 1
+  
+  
+ let g:NERDTreeWinPos = "left"     
+ let g:NERDSpaceDelims = 1         
+ let g:NERDCompactSexyComs = 1     
  let g:NERDDefaultAlign = 'left'
- let g:NERDAltDelims_java = 1
+ let g:NERDAltDelims_java = 1      
  let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
- let g:NERDCommentEmptyLines = 1
+ let g:NERDCommentEmptyLines = 1   
  let g:NERDTrimTrailingWhitespace = 1
- let g:NERDToggleCheckAllLines = 1
+ let g:NERDToggleCheckAllLines = 1 
  let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint']}
  let g:ale_fix_on_save = 1
  let NERDTreeMapOpenInTab='<ENTER>'
@@ -83,14 +83,17 @@ add following variables to your `~/.vim_runtime/my_configs.vim` file
  nmap <C-k> <plug>NERDCommenterToggle
  map <C-n> :NERDTreeToggle<cr>
  nmap <C-m> :NERDTreeFind<CR>
-        
-        
+ 
+ 
  au TabLeave * let g:lasttab = tabpagenr()
  nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
  vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
  nnoremap H gT
  nnoremap L gt
  
+ set nofoldenable 
+ set foldlevel=999
+ set noic
 
 
 ```
