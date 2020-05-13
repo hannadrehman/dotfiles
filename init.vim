@@ -1,3 +1,6 @@
+ " ---------------------------------------- 
+ " Automatic installation of vim-plug, if it's not available
+ " ----------------------------------------  
 if empty(glob('~/.nvim/autoload/plug.vim'))
 	echo "mother fucker"
   silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs
