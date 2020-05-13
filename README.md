@@ -10,6 +10,10 @@ Install [fd](https://github.com/sharkdp/fd)
 
 Install [ctags](https://github.com/universal-ctags/ctags
 
+RUN `:CocInstall  coc-emoji coc-eslint coc-prettier coc-tsserver coc-tslint coc-tslint-plugin coc-css coc-json coc-pyls coc-yaml` inside nvim
+
+add any plugin you want to this command.
+
 add following to your `.bashrc` or `.zshrc`
 
 
