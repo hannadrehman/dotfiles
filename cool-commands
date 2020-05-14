@@ -5,3 +5,9 @@ Press sd{deletion}. For example, key sequences sdb or sd( makes (foo) to foo. sd
 
 Press sr{deletion}{addition}. For example, key sequences srb" or sr(" makes (foo) to "foo".
 
+[count]<leader>cc |NERDCommenterComment|
+
+[count]<leader>c<space> |NERDCommenterToggle|
+
+[count]<leader>cs |NERDCommenterSexy|
+
