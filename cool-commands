@@ -14,20 +14,5 @@ Press sr{deletion}{addition}. For example, key sequences srb" or sr(" makes (foo
 [count]<leader>c<space> |NERDCommenterToggle|
 
 [count]<leader>cs |NERDCommenterSexy|
-
-## file imports
-
-<Leader>if JsFileImport)
-
-<Leader>iF JsFileImportList)
-
-<Leader>ig JsGotoDefinition)
-
-<Leader>iG JsGotoDefinition)
-
-<Leader>ip PromptJsFileImport)
-
-<Leader>is SortJsFileImport)  
-
-<Leader>ic JsFixImport) 
+ 
 
