@@ -1,4 +1,4 @@
-" ----------------------------------------
+
 " Automatic installation of vim-plug, if it's not available
 " ----------------------------------------
 if empty(glob('~/.nvim/autoload/plug.vim'))
@@ -17,7 +17,8 @@ autocmd VimEnter *
       \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
       \|   PlugInstall --sync | q
       \| endif
-"-----------------------------------------
+"----------------------------------------- 
+
 silent! if plug#begin('~/.nvim/plugged')
 
 
@@ -31,14 +32,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim',{'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'w0rp/ale'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'dracula/vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'preservim/nerdcommenter'
+
 
 call plug#end()
 
@@ -47,15 +49,25 @@ call plug#end()
 "-----------------------------------------------------
 
 let mapleader = ","
-let g:ale_linter_aliases = {'jsx': ['javascript']}
-let g:ale_linters = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier']}
-let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier']}
+colorscheme dracula
+set termguicolors
+"let g:ale_linter_aliases = {'jsx': ['javascript']}
+"let g:ale_linters = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier']}
+"let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier']}
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
-let g:airline_theme='dracula'
 let g:NERDTreeWinSize=45
 let g:airline_highlighting_cache = 1
-
+let g:lightline = {
+      \ 'colorscheme': 'dracula',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 set ic
 set number relativenumber
 set cmdheight=2
@@ -68,17 +80,20 @@ set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
-set cursorline
+set diffopt+=vertical
+set nocursorline
 "-----------------------------------------------------
 "      AUTO COMMANDS
 "-----------------------------------------------------
 filetype plugin on                
 filetype plugin indent on 
-autocmd vimenter * colorscheme dracula
 autocmd FileType nerdtree set norelativenumber
 autocmd FileType taglist set norelativenumber
 autocmd FileType json syntax match Comment +\/\/.\+$+
-
+au BufReadPost *
+     \ if line("'\"") > 1 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
 "-----------------------------------------------------
 "       MAPPINGS
 "-----------------------------------------------------
@@ -91,10 +106,13 @@ nnoremap <Leader>lb :Buffers<cr>
 "-------------GIT-------------------------------------
 nnoremap <Leader>gcs :Commits<cr> 
 nnoremap <Leader>gs :GFiles?<cr>
+nnoremap <Leader>gd :Gdiffsplit<cr>
+nnoremap <Leader>gb :Git blame<cr>
+nnoremap <Leader>gc :Git commit:<cr>
 
 "-------------SEARCHING-------------------------------
-nnoremap <Leader>sl :BLines<cr>                                                       
-nnoremap <Leader>sal :Ag<cr>
+nnoremap <Leader>f :BLines<cr>                                                       
+nnoremap <Leader>saf :Ag<cr>
 nnoremap <Leader>st :BTags<cr>
 nnoremap <Leader>sat :Tags<cr>
 "-------------AUTOCOMPLETE----------------------------
@@ -120,6 +138,10 @@ endfunction
 nnoremap <Leader>m :NERDTreeFind<cr>
 nnoremap <Leader>w <C-w>w
 nnoremap <Leader>e <C-w>p
+nnoremap <Leader>b i<c-m><c-c>
+
+
+
 "----------------split screen navigation---------------------
 endif
 
