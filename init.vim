@@ -55,7 +55,7 @@ set termguicolors
 let g:ale_linter_aliases = {'jsx': ['javascript']}
 let g:ale_linters = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier']}
 let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier']}
-let g:ale_fix_on_save = 1
+"let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 let g:NERDTreeWinSize=45
 let g:airline_highlighting_cache = 1
@@ -104,8 +104,8 @@ nnoremap <silent> <c-p> :Files<cr>
 nnoremap <silent> <c-l> :History<cr> 
 nnoremap <Leader>lb :Buffers<cr>
 
-	"-------------GIT-------------------------------------
-	nnoremap <Leader>gcs :Commits<cr> 
+"-------------GIT-------------------------------------
+nnoremap <Leader>gcs :Commits<cr> 
 nnoremap <Leader>gs :GFiles?<cr>
 nnoremap <Leader>gd :Gdiffsplit<cr>
 nnoremap <Leader>gb :Git blame<cr>
@@ -113,10 +113,11 @@ nnoremap <Leader>gc :Git commit:<cr>
 
 "-------------SEARCHING-------------------------------
 nnoremap <Leader>f :BLines<cr>                                                       
-	nnoremap <Leader>saf :Ag<cr>
-	nnoremap <Leader>st :BTags<cr>
+nnoremap <Leader>saf :Ag<cr>
+nnoremap <Leader>st :BTags<cr>
 nnoremap <Leader>sat :Tags<cr>
-	"-------------AUTOCOMPLETE----------------------------
+
+"-------------AUTOCOMPLETE----------------------------
 nmap <silent> <leader>lp <Plug>(coc-diagnostic-prev)  
 nmap <silent> <leader>ln <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>ld <Plug>(coc-definition)     
@@ -124,6 +125,9 @@ nmap <silent> <leader>lt <Plug>(coc-type-definition)
 nmap <silent> <leader>li <Plug>(coc-implementation) 
 nmap <silent> <leader>lf <Plug>(coc-references)    
 nmap <leader>lr <Plug>(coc-rename)             
+
+
+"-------------Shortcuts-------------------------------			
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 inoremap <leader>c <ESC><cr>        
 inoremap <leader>s <ESC>:w<cr>      
@@ -141,10 +145,10 @@ function! s:show_documentation()
   endif
 endfunction
 
-"------------------------------------------------------
+"-----------NerdTree and helpers------------------------------------
 nnoremap <Leader>m :NERDTreeFind<cr>
-	nnoremap <Leader>w <C-w>w
-	nnoremap <Leader>e <C-w>p
+nnoremap <Leader>w <C-w>w
+nnoremap <Leader>e <C-w>p
 nnoremap <Leader>b i<c-m><c-c>
 
 "----------------split screen navigation---------------------
