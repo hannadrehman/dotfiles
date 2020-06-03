@@ -6,8 +6,6 @@ Install [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 Install [fzf](https://github.com/junegunn/fzf)
 
-Install [fd](https://github.com/sharkdp/fd)
-
 Install [ctags](https://github.com/universal-ctags/ctags)
 
 Install [silver searcher](https://github.com/ggreer/the_silver_searcher)
