@@ -10,6 +10,10 @@ Install [ctags](https://github.com/universal-ctags/ctags)
 
 Install [silver searcher](https://github.com/ggreer/the_silver_searcher)
 
+Install [Nerd fonts](https://www.x123healthifyme.com/studio/live/landing)
+
+if you are using iterm set text fonts to `Hack Nerd Font`
+
 RUN `:CocInstall  coc-emoji coc-eslint coc-prettier coc-tsserver coc-tslint coc-tslint-plugin coc-css coc-json coc-pyls coc-yaml` inside nvim
 
 add any plugin you want to this command.
