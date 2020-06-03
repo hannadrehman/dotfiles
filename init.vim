@@ -1,18 +1,18 @@
 
 " Automatic installation of vim-plug, if it's not available
 " ----------------------------------------
+
 if empty(glob('~/.nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs
 	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-"-----------------------------------------
-
 
 
 "-----------------------------------------
 " Automatically install missing plugins on startup
 "-----------------------------------------
+
 autocmd VimEnter *
       \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
       \|   PlugInstall --sync | q
@@ -41,6 +41,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'preservim/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'sheerun/vim-polyglot'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
@@ -48,16 +50,26 @@ call plug#end()
 "       VARIABLES
 "-----------------------------------------------------
 
+"Leader
 let mapleader = ","
+
+"colorscheme
 colorscheme gruvbox
 set bg=dark
+
+"term colors
 set termguicolors
+
+"linter
 let g:ale_linter_aliases = {'jsx': ['javascript']}
 let g:ale_linters = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier']}
 let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier']}
 "let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
+
 let g:NERDTreeWinSize=45
+
+"ariline
 let g:airline_highlighting_cache = 1
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
@@ -69,6 +81,11 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+let g:javascript_plugin_jsdoc = 1
+
+
+"editor
 set ic
 set number relativenumber
 set cmdheight=2
@@ -95,13 +112,16 @@ au BufReadPost *
      \ if line("'\"") > 1 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
+
 "-----------------------------------------------------
 "       MAPPINGS
 "-----------------------------------------------------
 
-"-------------LISTS-----------------------------------
+"-------------FILES LOOKUP-----------------------------------
 nnoremap <silent> <c-p> :Files<cr>                                                 
 nnoremap <silent> <c-l> :History<cr> 
+nnoremap <silent> <c-k> :GFiles<cr> 
 nnoremap <Leader>lb :Buffers<cr>
 
 "-------------GIT-------------------------------------
@@ -113,9 +133,9 @@ nnoremap <Leader>gc :Git commit:<cr>
 
 "-------------SEARCHING-------------------------------
 nnoremap <Leader>f :BLines<cr>                                                       
-nnoremap <Leader>saf :Ag<cr>
-nnoremap <Leader>st :BTags<cr>
-nnoremap <Leader>sat :Tags<cr>
+nnoremap <Leader>F :Ag<cr>
+nnoremap <Leader>t :BTags<cr>
+nnoremap <Leader>T :Tags<cr>
 
 "-------------AUTOCOMPLETE----------------------------
 nmap <silent> <leader>lp <Plug>(coc-diagnostic-prev)  
@@ -123,8 +143,8 @@ nmap <silent> <leader>ln <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>ld <Plug>(coc-definition)     
 nmap <silent> <leader>lt <Plug>(coc-type-definition)
 nmap <silent> <leader>li <Plug>(coc-implementation) 
-nmap <silent> <leader>lf <Plug>(coc-references)    
-nmap <leader>lr <Plug>(coc-rename)             
+nmap <silent> <leader>lr <Plug>(coc-references)    
+nmap <leader>lg <Plug>(coc-rename)             
 
 
 "-------------Shortcuts-------------------------------			
@@ -147,10 +167,9 @@ endfunction
 
 "-----------NerdTree and helpers------------------------------------
 nnoremap <Leader>m :NERDTreeFind<cr>
-nnoremap <Leader>w <C-w>w
-nnoremap <Leader>e <C-w>p
-nnoremap <Leader>b i<c-m><c-c>
+nnoremap <Leader>e <C-w>w
+nnoremap <Leader>w <C-w>p
+nnoremap <Leader>b <c-m><c-c>
 
 "----------------split screen navigation---------------------
 endif
-
