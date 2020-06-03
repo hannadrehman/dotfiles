@@ -1,5 +1,5 @@
-Configurations that i use daily 
+# Configurations that i use daily 
 
-## vim
-## tmux
-## zsh
+### vim
+### tmux
+### zsh
