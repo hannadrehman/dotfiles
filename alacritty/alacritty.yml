@@ -1,0 +1,18 @@
+# Font configuration (changes require restart)
+font:
+  normal:
+    family: Hack Nerd Font
+    style: Regular
+    
+  bold:
+    family: Hack Nerd Font
+    style: Bold
+    
+  italic:
+    family:  Hack Nerd Font 
+    style: Italic
+
+
+env:
+  TERM: xterm-256color
+  LC_ALL: "sv_SE.UTF-8"
