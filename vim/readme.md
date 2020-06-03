@@ -1,4 +1,4 @@
-# Vim-like-VSCode
+# Vim Setup
 
 ### Collection of some awesome plugins for neovim which makes it work almost like vscode.
 
