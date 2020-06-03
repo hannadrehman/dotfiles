@@ -43,6 +43,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
