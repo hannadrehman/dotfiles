@@ -26,6 +26,7 @@ add following to your `.bashrc` or `.zshrc`
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"  
 ```
+more complex config is [here](https://github.com/hannadrehman/configs/blob/8adfb810afd533e8eba0e8737a7c72150a508182/zshell/.zshrc#L20)
 
 ```
 mkdir .config/nvim
