@@ -3,8 +3,6 @@
 source ~/.bash_profile
 source ~/.bashrc
 # Path to your oh-my-zsh installation.
-# install oh my zsh
-
 export ZSH="/Users/hannad/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -21,17 +19,17 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag -g "" --ignore-dir dist --ignore-dir bower_files --ignore-dir bower_components'
+export FZF_DEFAULT_COMMAND='ag -g "" --ignore .git --ignore-dir node_modules --ignore-dir dist --ignore-dir bower_files --ignore-dir bower_components --ignore tags --ignore yarn.lock'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias fedir="cd ~/workspace/fedir"
-alias bedir="cd ~/workspace/bedir"
+alias fedir="cd ~/workspace/web-frontend"
+alias bedir="cd ~/workspace/navihealth/"
 alias msdir="cd ~/workspace/apps/mock-server/"
 alias v="nvim"
 alias reload="source ~/.zshrc"
 alias fe="fedir && v"
 alias be="bedir && v"
-alias ms="msdir && v" 
+alias ms="msdir && v"
 alias vc="v ~/.config/nvim/init.vim"
 alias zconfig="v ~/.zshrc"
 alias dev="~/workspace/apps/shell-scripts/tmux-session.sh"
