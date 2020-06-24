@@ -36,13 +36,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'jiangmiao/auto-pairs'
-Plug 'machakann/vim-sandwich'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'machakann/vim-sandwich'
 Plug 'preservim/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'sheerun/vim-polyglot'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'ludovicchabant/vim-gutentags'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -72,6 +72,8 @@ set diffopt+=vertical
 set hidden
 set smartindent
 set updatetime=50
+set lazyredraw
+set ttyfast
 
 "Colorscheme
 colorscheme gruvbox
@@ -84,10 +86,10 @@ set termguicolors
 let g:ale_linter_aliases = {'jsx': ['javascript']}
 let g:ale_linters = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier']}
 let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier']}
-"let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=65
 
 "ariline
 let g:airline_highlighting_cache = 1
@@ -96,6 +98,10 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_powerline_fonts = 1
+
+"nerdtree
+let NERDTreeQuitOnOpen=1
+
 
 let g:javascript_plugin_jsdoc = 1
 
@@ -119,11 +125,21 @@ au BufReadPost *
 "-----------------------------------------------------
 
 "-------------FILES LOOKUP-----------------------------------
-nnoremap <silent> <c-k> :Files<cr>
-nnoremap <silent> <c-l> :History<cr>
-nnoremap <silent> <c-p> :GFiles<cr>
-nnoremap <Leader>lb :Buffers<cr>
+"all files
+nnoremap <silent> <c-j> :Files<cr>
+inoremap <silent> <c-j> :Files<cr>
 
+"opened buffers
+nnoremap <silent> <c-k> :Buffers<cr>
+inoremap <silent> <c-k> :Buffers<cr>
+
+"recent files
+nnoremap <silent> <c-l> :History<cr>
+inoremap <silent> <c-l> :History<cr>
+
+"all files in git repo
+nnoremap <silent> <c-p> :GFiles<cr>
+inoremap <silent> <c-p> :GFiles<cr>
 "-------------GIT-------------------------------------
 nnoremap <Leader>gcs :Commits<cr>
 nnoremap <Leader>gs :GFiles?<cr>
@@ -138,23 +154,44 @@ nnoremap <Leader>t :BTags<cr>
 nnoremap <Leader>T :Tags<cr>
 
 "-------------AUTOCOMPLETE----------------------------
-nmap <silent> <leader>lp <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>ln <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> <leader>ln <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>lm <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>lk <Plug>(coc-definition)
 nmap <silent> <leader>lt <Plug>(coc-type-definition)
 nmap <silent> <leader>li <Plug>(coc-implementation)
-nmap <silent> <leader>lr <Plug>(coc-references)
-nmap <leader>lg <Plug>(coc-rename)
+nmap <silent> <leader>lo <Plug>(coc-references)
+nmap <silent> <leader>lr <Plug>(coc-rename)
 
 "-------------Shortcuts-------------------------------
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-inoremap <leader>c <ESC><cr>
-inoremap <leader>s <ESC>:w<cr>
-nmap <leader>s <ESC>:w<cr>
-inoremap <leader>z <ESC>u
-noremap <leader>z u
-inoremap <leader>y <ESC><C-R>
-noremap <leader>y <C-R>
+
+"save file
+inoremap <c-s> <ESC><cr>
+inoremap <c-s> <ESC>:w<cr>
+nmap <c-s> <ESC>:w<cr>
+
+"undo redo
+nnoremap <C-Z> u
+nnoremap <C-Y> <C-R>
+inoremap <C-Z> <C-O>u
+inoremap <C-Y> <C-O><C-R>
+
+"buffer
+map <c-m> :bn<cr>
+imap <c-m> <ESC>:bn<cr>
+map <c-n> :bp<cr>
+imap <c-n> <ESC>:bp<cr>
+
+"splts
+nnoremap <c-q> <C-w>w
+nnoremap <c-w> <C-w>p
+
+
+"disabled movements
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 function! s:show_documentation()
   if &filetype == 'vim'
@@ -166,8 +203,7 @@ endfunction
 
 "-----------NerdTree and helpers------------------------------------
 nnoremap <Leader>m :NERDTreeFind<cr>
-nnoremap <Leader>e <C-w>w
-nnoremap <Leader>w <C-w>p
+inoremap <Leader>m <ESC> :NERDTreeFind<cr>
 
 "custom fns
 fun! TrimWhitespace()
