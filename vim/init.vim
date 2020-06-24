@@ -183,7 +183,6 @@ map <c-n> :bp<cr>
 imap <c-n> <ESC>:bp<cr>
 
 "splts
-nnoremap <c-q> <C-w>w
 nnoremap <c-w> <C-w>p
 
 
