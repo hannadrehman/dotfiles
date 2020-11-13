@@ -33,17 +33,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim',{'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'airblade/vim-gitgutter'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'machakann/vim-sandwich'
 Plug 'preservim/nerdcommenter'
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'ludovicchabant/vim-gutentags'
-Plug 'ryanoasis/vim-devicons'
+Plug 'vifm/vifm.vim'
 
 call plug#end()
 
@@ -57,7 +49,8 @@ let mapleader = ","
 set nohlsearch
 set nocursorline
 set ic
-set number relativenumber
+set relativenumber
+set number
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
@@ -74,6 +67,7 @@ set smartindent
 set updatetime=50
 set lazyredraw
 set ttyfast
+let loaded_netrwPlugin = 1
 
 "Colorscheme
 colorscheme gruvbox
@@ -89,7 +83,6 @@ let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['es
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 
-let g:NERDTreeWinSize=65
 
 "ariline
 let g:airline_highlighting_cache = 1
@@ -99,26 +92,21 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_powerline_fonts = 1
 
-"nerdtree
-let NERDTreeQuitOnOpen=1
-
 
 let g:javascript_plugin_jsdoc = 1
-
 
 "-----------------------------------------------------
 "      AUTO COMMANDS
 "-----------------------------------------------------
 filetype plugin on
 filetype plugin indent on
-autocmd FileType nerdtree set norelativenumber
 autocmd FileType taglist set norelativenumber
 autocmd FileType json syntax match Comment +\/\/.\+$+
 au BufReadPost *
      \ if line("'\"") > 1 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-
+autocmd BufEnter * set relativenumber
 
 "-----------------------------------------------------
 "       MAPPINGS
@@ -128,6 +116,7 @@ au BufReadPost *
 "all files
 nnoremap <silent> <c-j> :Files<cr>
 inoremap <silent> <c-j> :Files<cr>
+nnoremap <Leader>f :Vifm<cr>
 
 "opened buffers
 nnoremap <silent> <c-k> :Buffers<cr>
@@ -148,10 +137,7 @@ nnoremap <Leader>gb :Git blame<cr>
 nnoremap <Leader>gc :Git commit:<cr>
 
 "-------------SEARCHING-------------------------------
-nnoremap <Leader>f :BLines<cr>
 nnoremap <Leader>F :Ag<cr>
-nnoremap <Leader>t :BTags<cr>
-nnoremap <Leader>T :Tags<cr>
 
 "-------------AUTOCOMPLETE----------------------------
 nmap <silent> <leader>ln <Plug>(coc-diagnostic-prev)
@@ -177,13 +163,13 @@ inoremap <C-Z> <C-O>u
 inoremap <C-Y> <C-O><C-R>
 
 "buffer
-map <c-m> :bn<cr>
-imap <c-m> <ESC>:bn<cr>
-map <c-n> :bp<cr>
-imap <c-n> <ESC>:bp<cr>
+"map <c-m> :bn<cr>
+"imap <c-m> <ESC>:bn<cr>
+"map <c-n> :bp<cr>
+"imap <c-n> <ESC>:bp<cr>
 
 "splts
-nnoremap <c-w> <C-w>p
+noremap <c-e> <C-w>p
 
 
 "disabled movements
@@ -200,9 +186,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-"-----------NerdTree and helpers------------------------------------
-nnoremap <Leader>m :NERDTreeFind<cr>
-inoremap <Leader>m <ESC> :NERDTreeFind<cr>
 
 "custom fns
 fun! TrimWhitespace()
