@@ -10,7 +10,7 @@ Install [ctags](https://github.com/universal-ctags/ctags)
 
 Install [silver searcher](https://github.com/ggreer/the_silver_searcher)
 
-Install [Nerd fonts](https://www.x123healthifyme.com/studio/live/landing)
+Install [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 
 if you are using iterm set text fonts to `Hack Nerd Font`
 
