@@ -68,6 +68,13 @@ set updatetime=50
 set lazyredraw
 set ttyfast
 let loaded_netrwPlugin = 1
+set smartindent
+set nobackup
+set nowritebackup
+set updatetime=300
+set timeoutlen=500
+set clipboard=unnamedplus
+set spell spelllang=en_us
 
 "Colorscheme
 colorscheme gruvbox
@@ -78,8 +85,8 @@ set termguicolors
 
 "linter
 let g:ale_linter_aliases = {'jsx': ['javascript']}
-let g:ale_linters = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier']}
-let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier']}
+let g:ale_linters = { 'javascript': ['eslint', 'prettier'], 'javascriptreact': ['eslint', 'prettier'],'html':['prettier'], 'json':['prettier']}
+let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier'],  'json':['prettier']}
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 
@@ -118,9 +125,15 @@ nnoremap <silent> <c-j> :Files<cr>
 inoremap <silent> <c-j> :Files<cr>
 nnoremap <Leader>f :Vifm<cr>
 
+"windows
+nnoremap <C-[> <C-w>h
+nnoremap <C-]> <C-w>l
+
 "opened buffers
 nnoremap <silent> <c-k> :Buffers<cr>
 inoremap <silent> <c-k> :Buffers<cr>
+nnoremap <TAB> :bnext<CR>
+nnoremap <S-TAB> :bprevious<CR>
 
 "recent files
 nnoremap <silent> <c-l> :History<cr>
@@ -161,15 +174,6 @@ nnoremap <C-Z> u
 nnoremap <C-Y> <C-R>
 inoremap <C-Z> <C-O>u
 inoremap <C-Y> <C-O><C-R>
-
-"buffer
-"map <c-m> :bn<cr>
-"imap <c-m> <ESC>:bn<cr>
-"map <c-n> :bp<cr>
-"imap <c-n> <ESC>:bp<cr>
-
-"splts
-noremap <c-e> <C-w>p
 
 
 "disabled movements
