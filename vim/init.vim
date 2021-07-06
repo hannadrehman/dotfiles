@@ -1,4 +1,3 @@
-
 " Automatic installation of vim-plug, if it's not available
 " ----------------------------------------
 
@@ -31,7 +30,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim',{'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdcommenter'
@@ -77,31 +76,32 @@ set clipboard=unnamedplus
 set spell spelllang=en_us
 
 "Colorscheme
-colorscheme gruvbox
 set bg=dark
-
+colorscheme gruvbox
 "term colors
 set termguicolors
 
 "linter
 let g:ale_linter_aliases = {'jsx': ['javascript']}
 let g:ale_linters = { 'javascript': ['eslint', 'prettier'], 'javascriptreact': ['eslint', 'prettier'],'html':['prettier'], 'json':['prettier']}
-let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier'],  'json':['prettier']}
+let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier'],  'json':['prettier'], 'rust': ['rustfmt']}
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
-
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = ''
 
 "ariline
 let g:airline_highlighting_cache = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_powerline_fonts = 1
-
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 let g:javascript_plugin_jsdoc = 1
 
+" nerdcommenter
+ let g:NERDCompactSexyComs = 1
 "-----------------------------------------------------
 "      AUTO COMMANDS
 "-----------------------------------------------------
@@ -143,11 +143,10 @@ inoremap <silent> <c-l> :History<cr>
 nnoremap <silent> <c-p> :GFiles<cr>
 inoremap <silent> <c-p> :GFiles<cr>
 "-------------GIT-------------------------------------
-nnoremap <Leader>gcs :Commits<cr>
+nnoremap <Leader>gc :Commits<cr>
 nnoremap <Leader>gs :GFiles?<cr>
 nnoremap <Leader>gd :Gdiffsplit<cr>
 nnoremap <Leader>gb :Git blame<cr>
-nnoremap <Leader>gc :Git commit:<cr>
 
 "-------------SEARCHING-------------------------------
 nnoremap <Leader>F :Ag<cr>
@@ -163,17 +162,6 @@ nmap <silent> <leader>lr <Plug>(coc-rename)
 
 "-------------Shortcuts-------------------------------
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-"save file
-inoremap <c-s> <ESC><cr>
-inoremap <c-s> <ESC>:w<cr>
-nmap <c-s> <ESC>:w<cr>
-
-"undo redo
-nnoremap <C-Z> u
-nnoremap <C-Y> <C-R>
-inoremap <C-Z> <C-O>u
-inoremap <C-Y> <C-O><C-R>
 
 
 "disabled movements
