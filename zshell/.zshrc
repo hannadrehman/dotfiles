@@ -5,9 +5,7 @@ ZSH_DISABLE_COMPFIX=true
 export ZSH="/Users/hannadurrehman/.oh-my-zsh/"
 source ~/.bashrc
 ZSH_THEME="robbyrussell"
-#ZSH_THEME="spaceship"
 HYPHEN_INSENSITIVE="true"
-#DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
