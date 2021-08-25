@@ -4,11 +4,7 @@
 
 Install [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
-Install [fzf](https://github.com/junegunn/fzf)
-
-Install [ctags](https://github.com/universal-ctags/ctags)
-
-Install [silver searcher](https://github.com/ggreer/the_silver_searcher)
+Install [ag](https://github.com/BurntSushi/ripgrep)
 
 Install [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 
