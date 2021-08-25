@@ -10,8 +10,6 @@ Install [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 
 if you are using iterm set text fonts to `Hack Nerd Font`
 
-RUN `:CocInstall  coc-emoji coc-eslint coc-prettier coc-tsserver coc-tslint coc-tslint-plugin coc-css coc-json coc-pyls coc-yaml` inside nvim
-
 add any plugin you want to this command.
 
 add following to your `.bashrc` or `.zshrc`
