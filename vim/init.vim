@@ -25,22 +25,35 @@ silent! if plug#begin('~/.nvim/plugged')
 "	PLUGINS
 "-----------------------------------------------------
 
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'neoclide/coc.nvim',{'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdcommenter'
-Plug 'vifm/vifm.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'cocopon/iceberg.vim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'takac/vim-hardtime'
 
 call plug#end()
+"----------------------------------------------------
+"-------lua imports
+
+lua require('lsp-config')
+lua require('compe-config')
+lua require('telescope-config')
+
 
 "-----------------------------------------------------
 "       VARIABLES
 "-----------------------------------------------------
+
 
 "Editor confing
 
@@ -74,17 +87,19 @@ set updatetime=300
 set timeoutlen=500
 set clipboard=unnamedplus
 set spell spelllang=en_us
+set splitright
 
 "Colorscheme
-set bg=dark
-colorscheme gruvbox
+set background=dark
+colorscheme iceberg
+
 "term colors
 set termguicolors
 
 "linter
 let g:ale_linter_aliases = {'jsx': ['javascript']}
-let g:ale_linters = { 'javascript': ['eslint', 'prettier'], 'javascriptreact': ['eslint', 'prettier'],'html':['prettier'], 'json':['prettier']}
-let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier'],  'json':['prettier'], 'rust': ['rustfmt']}
+let g:ale_linters = { 'javascript': ['eslint', 'prettier'], 'javascriptreact': ['eslint', 'prettier'],'html':['prettier'], 'json':['prettier'], 'go': ['gopls']}
+let g:ale_fixers = {'javascript': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier'],  'json':['prettier'], 'rust': ['rustfmt'],'go': ['gofmt']}
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 let g:ale_sign_error = '✗'
@@ -102,6 +117,59 @@ let g:javascript_plugin_jsdoc = 1
 
 " nerdcommenter
  let g:NERDCompactSexyComs = 1
+
+ "----------Hard time-----------------
+ let g:hardtime_default_on = 1
+
+ "----------------------nvim-tree------------------------
+let g:nvim_tree_side = 'right'
+let g:nvim_tree_width = 60
+let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ]
+let g:nvim_tree_gitignore = 1
+let g:nvim_tree_auto_close = 1
+let g:nvim_tree_quit_on_open = 1
+let g:nvim_tree_follow = 1
+let g:nvim_tree_indent_markers = 0
+let g:nvim_tree_git_hl = 1
+let g:nvim_tree_highlight_opened_files = 1
+let g:nvim_tree_tab_open = 1
+let g:nvim_tree_add_trailing = 1
+let g:nvim_tree_group_empty = 1
+let g:nvim_tree_disable_window_picker = 1
+let g:nvim_tree_icon_padding = ' '
+let g:nvim_tree_update_cwd = 1
+let g:nvim_tree_hide_dotfiles = 0
+let g:nvim_tree_highlight_opened_files = 1
+let g:nvim_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★",
+    \   'deleted': "",
+    \   'ignored': "◌"
+    \   },
+    \ 'folder': {
+    \   'arrow_open': "",
+    \   'arrow_closed': "",
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   'symlink_open': "",
+    \   },
+    \   'lsp': {
+    \     'hint': "",
+    \     'info': "",
+    \     'warning': "",
+    \     'error': "",
+    \   }
+    \ }
+
 "-----------------------------------------------------
 "      AUTO COMMANDS
 "-----------------------------------------------------
@@ -119,49 +187,33 @@ autocmd BufEnter * set relativenumber
 "       MAPPINGS
 "-----------------------------------------------------
 
-"-------------FILES LOOKUP-----------------------------------
-"all files
-nnoremap <silent> <c-j> :Files<cr>
-inoremap <silent> <c-j> :Files<cr>
-nnoremap <Leader>f :Vifm<cr>
+"-------------TELESCOPE-------------------------------
 
-"windows
-nnoremap <C-[> <C-w>h
-nnoremap <C-]> <C-w>l
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').oldfiles()<cr>
+nnoremap <leader>fd <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fo <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+"-------------------File explorer-------------------------
+nnoremap <C-p> :NvimTreeFindFile<CR>
+nnoremap n nzzzv
+nnoremap N nzzzv
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc> :m .+1<CR>==
+inoremap <C-k> <esc> :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
+"------------------Common Remaps-----------------------
+nnoremap Y y$
 
 "opened buffers
-nnoremap <silent> <c-k> :Buffers<cr>
-inoremap <silent> <c-k> :Buffers<cr>
 nnoremap <TAB> :bnext<CR>
 nnoremap <S-TAB> :bprevious<CR>
-
-"recent files
-nnoremap <silent> <c-l> :History<cr>
-inoremap <silent> <c-l> :History<cr>
-
-"all files in git repo
-nnoremap <silent> <c-p> :GFiles<cr>
-inoremap <silent> <c-p> :GFiles<cr>
-"-------------GIT-------------------------------------
-nnoremap <Leader>gc :Commits<cr>
-nnoremap <Leader>gs :GFiles?<cr>
-nnoremap <Leader>gd :Gdiffsplit<cr>
-nnoremap <Leader>gb :Git blame<cr>
-
-"-------------SEARCHING-------------------------------
-nnoremap <Leader>F :Ag<cr>
-
-"-------------AUTOCOMPLETE----------------------------
-nmap <silent> <leader>ln <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>lm <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>lk <Plug>(coc-definition)
-nmap <silent> <leader>lt <Plug>(coc-type-definition)
-nmap <silent> <leader>li <Plug>(coc-implementation)
-nmap <silent> <leader>lo <Plug>(coc-references)
-nmap <silent> <leader>lr <Plug>(coc-rename)
-
-"-------------Shortcuts-------------------------------
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 
 "disabled movements
@@ -169,14 +221,6 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
 
 
 "custom fns

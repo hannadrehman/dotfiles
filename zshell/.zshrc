@@ -4,8 +4,8 @@
 ZSH_DISABLE_COMPFIX=true
 export ZSH="/Users/hannadurrehman/.oh-my-zsh/"
 source ~/.bashrc
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="spaceship"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="spaceship"
 HYPHEN_INSENSITIVE="true"
 #DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
@@ -19,11 +19,13 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag -g "" --ignore .git --ignore-dir node_modules --ignore-dir dist --ignore-dir bower_files --ignore-dir bower_components --ignore tags --ignore yarn.lock'
+#export FZF_DEFAULT_COMMAND='ag -g "" --ignore .git --ignore-dir node_modules --ignore-dir dist --ignore-dir bower_files --ignore-dir bower_components --ignore tags --ignore yarn.lock'
+#export FZF_DEFAULT_COMMAND = "rg --files --hidden --follow --glob '!.git'"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias fedir="cd ~/workspace/"
-alias bedir="cd ~/workspace/"
+alias fedir="cd ~/workspace/web-frontend"
+alias bedir="cd ~/workspace/navihealth"
 alias msdir="cd ~/workspace/projects/mock-server"
 alias v="nvim"
 alias reload="source ~/.zshrc"
