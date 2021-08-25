@@ -19,8 +19,6 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#export FZF_DEFAULT_COMMAND='ag -g "" --ignore .git --ignore-dir node_modules --ignore-dir dist --ignore-dir bower_files --ignore-dir bower_components --ignore tags --ignore yarn.lock'
-#export FZF_DEFAULT_COMMAND = "rg --files --hidden --follow --glob '!.git'"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
