@@ -21,6 +21,9 @@ font:
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
+
+background_opacity: 0.9
+
 env:
   TERM: xterm-256color
   LC_ALL: "EN_US.UTF-8"
