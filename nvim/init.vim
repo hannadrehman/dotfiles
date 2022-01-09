@@ -70,7 +70,6 @@ lua require('editor-settings')
 
 "Editor confing
 
-colorscheme iceberg
 hi Normal guibg=NONE ctermbg=NONE
 
 "linter
