@@ -1,0 +1,22 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "copied my dot files to respective folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannadrehman/dotfiles.git"
+  },
+  "keywords": [
+    "dotfiles"
+  ],
+  "author": "hannadrehman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hannadrehman/dotfiles/issues"
+  },
+  "homepage": "https://github.com/hannadrehman/dotfiles#readme"
+}
