@@ -25,8 +25,8 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias fedir="cd ~/workspace/web-frontend"
-alias bedir="cd ~/workspace/navihealth"
+alias fedir="cd ~/workspace/"
+alias bedir="cd ~/workspace/"
 alias msdir="cd ~/workspace/projects/mock-server"
 alias v="nvim"
 alias reload="source ~/.zshrc"
