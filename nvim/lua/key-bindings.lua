@@ -2,7 +2,7 @@ local map = require("utils").map
 
 
 --nvim tree
-map("n","<C-p>",":NvimTreeFindFile<CR>")
+map("n","<C-p>",":NvimTreeFindFileToggle<CR>")
 
 --search
 map("n","n" ,"nzzzv")

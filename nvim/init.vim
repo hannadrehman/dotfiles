@@ -35,6 +35,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
@@ -48,20 +49,31 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ttys3/nvim-blamer.lua'
 Plug 'romgrk/barbar.nvim'
+Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
+Plug 'ray-x/navigator.lua'
+Plug 'tpope/vim-repeat'
+Plug 'phaazon/hop.nvim'
+
+
+
 
 call plug#end()
 "----------------------------------------------------
 "-------lua imports
-
-lua require('plugins/lsp-config')
-lua require('plugins/telescope-config')
-lua require('plugins/lua-line-config')
-lua require('plugins/nvim-blamer-config')
-lua require('plugins/barbar-config')
-lua require('plugins/cmp-config')
-lua require('plugins/treesitter')
+"settings
 lua require('key-bindings')
 lua require('editor-settings')
+
+"plugins
+lua require('plugins/lsp')
+lua require('plugins/telescope')
+lua require('plugins/lua-line')
+lua require('plugins/nvim-blamer')
+lua require('plugins/barbar')
+lua require('plugins/cmp')
+lua require('plugins/treesitter')
+lua require('plugins/nvim-tree')
+lua require('plugins/hop')
 
 "-----------------------------------------------------
 "       VARIABLES
@@ -69,8 +81,14 @@ lua require('editor-settings')
 
 
 "Editor confing
-
+filetype plugin on
+filetype plugin indent on
+highlight Cursor guifg=white guibg=white
+highlight iCursor guifg=white guibg=white
+highlight Visual guifg=white guibg=#676FA3 gui=none
 hi Normal guibg=NONE ctermbg=NONE
+hi CursorLine guibg=Grey20
+
 
 "linter
 let g:ale_linter_aliases = {'jsx': ['javascript']}
@@ -86,23 +104,12 @@ let g:javascript_plugin_jsdoc = 1
 
 
  "----------------------nvim-tree------------------------
-let g:nvim_tree_side = 'right'
-let g:nvim_tree_width = 60
-let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ]
-let g:nvim_tree_gitignore = 1
-let g:nvim_tree_auto_close = 1
 let g:nvim_tree_quit_on_open = 1
-let g:nvim_tree_follow = 1
-let g:nvim_tree_indent_markers = 0
 let g:nvim_tree_git_hl = 1
-let g:nvim_tree_highlight_opened_files = 1
-let g:nvim_tree_tab_open = 1
-let g:nvim_tree_add_trailing = 1
-let g:nvim_tree_group_empty = 1
-let g:nvim_tree_disable_window_picker = 1
 let g:nvim_tree_icon_padding = ' '
-let g:nvim_tree_update_cwd = 1
-let g:nvim_tree_hide_dotfiles = 0
+let g:nvim_tree_highlight_opened_files = 1
+let g:nvim_tree_respect_buf_cwd = 1
+let g:nvim_tree_group_empty = 1
 let g:nvim_tree_highlight_opened_files = 1
 let g:nvim_tree_icons = {
     \ 'default': '',
@@ -137,8 +144,6 @@ let g:nvim_tree_icons = {
 "-----------------------------------------------------
 "      AUTO COMMANDS
 "-----------------------------------------------------
-filetype plugin on
-filetype plugin indent on
 autocmd FileType taglist set norelativenumber
 autocmd FileType json syntax match Comment +\/\/.\+$+
 au BufReadPost *
