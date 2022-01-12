@@ -87,7 +87,7 @@ highlight Cursor guifg=white guibg=white
 highlight iCursor guifg=white guibg=white
 highlight Visual guifg=white guibg=#676FA3 gui=none
 hi Normal guibg=NONE ctermbg=NONE
-hi CursorLine guibg=Grey20
+hi CursorLine guibg=#2C2E43
 
 
 "linter
@@ -104,6 +104,7 @@ let g:javascript_plugin_jsdoc = 1
 
 
  "----------------------nvim-tree------------------------
+ let g:nvim_tree_disable_window_picker = 1
 let g:nvim_tree_quit_on_open = 1
 let g:nvim_tree_git_hl = 1
 let g:nvim_tree_icon_padding = ' '
