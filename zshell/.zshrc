@@ -1,3 +1,10 @@
+# # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -10,11 +17,8 @@ source ~/.bashrc
 source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="spaceship"
 HYPHEN_INSENSITIVE="true"
-#DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
@@ -26,8 +30,6 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#export FZF_DEFAULT_COMMAND='ag -g "" --ignore .git --ignore-dir node_modules --ignore-dir dist --ignore-dir bower_files --ignore-dir bower_components --ignore tags --ignore yarn.lock'
-#export FZF_DEFAULT_COMMAND = "rg --files --hidden --follow --glob '!.git'"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
@@ -53,3 +55,7 @@ pyclean () {
     find ${ZSH_PYCLEAN_PLACES} -type d -name "__pycache__" -delete
     find ${ZSH_PYCLEAN_PLACES} -type d -name ".mypy_cache" -delete
 }
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
