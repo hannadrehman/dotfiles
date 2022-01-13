@@ -53,13 +53,14 @@ Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
 Plug 'ray-x/navigator.lua'
 Plug 'tpope/vim-repeat'
 Plug 'phaazon/hop.nvim'
-
+Plug 'sindrets/diffview.nvim'
 
 
 
 call plug#end()
 "----------------------------------------------------
 "-------lua imports
+
 "settings
 lua require('key-bindings')
 lua require('editor-settings')
@@ -74,6 +75,7 @@ lua require('plugins/cmp')
 lua require('plugins/treesitter')
 lua require('plugins/nvim-tree')
 lua require('plugins/hop')
+lua require('plugins/diffview')
 
 "-----------------------------------------------------
 "       VARIABLES
