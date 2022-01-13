@@ -5,7 +5,13 @@
 ZSH_DISABLE_COMPFIX=true
 export ZSH="/Users/hannadurrehman/.oh-my-zsh/"
 source ~/.bashrc
-ZSH_THEME="robbyrussell"
+#
+#this might change in future
+source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="spaceship"
 HYPHEN_INSENSITIVE="true"
 #DISABLE_UPDATE_PROMPT="true"
