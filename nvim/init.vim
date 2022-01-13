@@ -42,7 +42,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'cocopon/iceberg.vim'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
