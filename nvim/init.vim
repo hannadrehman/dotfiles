@@ -86,8 +86,13 @@ filetype plugin indent on
 highlight Cursor guifg=white guibg=white
 highlight iCursor guifg=white guibg=white
 highlight Visual guifg=white guibg=#676FA3 gui=none
-hi Normal guibg=NONE ctermbg=NONE
 hi CursorLine guibg=#2C2E43
+
+"transparent vim
+hi Normal guibg=NONE ctermbg=NONE
+hi NvimTreeNormal guibg=NONE ctermbg=NONE
+hi ActiveWindow guibg=NONE ctermbg=NONE
+hi InactiveWindow guibg=NONE ctermbg=NONE
 
 
 "linter
@@ -176,6 +181,18 @@ fun! TrimWhitespace()
 endfun
 
 autocmd BufWritePre * :call TrimWhitespace()
+
+
+"Call method on window enter
+augroup WindowManagement
+  autocmd!
+  autocmd WinEnter * call Handle_Win_Enter()
+augroup END
+
+"Change highlight group of active/inactive windows
+function! Handle_Win_Enter()
+  setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+endfunction
 
 "----------------split screen navigation---------------------
 endif
