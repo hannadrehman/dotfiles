@@ -47,7 +47,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'ttys3/nvim-blamer.lua'
 Plug 'romgrk/barbar.nvim'
 Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
 Plug 'ray-x/navigator.lua'
@@ -69,7 +68,6 @@ lua require('editor-settings')
 lua require('plugins/lsp')
 lua require('plugins/telescope')
 lua require('plugins/lua-line')
-lua require('plugins/nvim-blamer')
 lua require('plugins/barbar')
 lua require('plugins/cmp')
 lua require('plugins/treesitter')
@@ -178,7 +176,6 @@ fun! TrimWhitespace()
 endfun
 
 autocmd BufWritePre * :call TrimWhitespace()
-call nvimblamer#auto()
 
 "----------------split screen navigation---------------------
 endif
