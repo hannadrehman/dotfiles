@@ -12,6 +12,8 @@ fi
 ZSH_DISABLE_COMPFIX=true
 export ZSH="/Users/hannadurrehman/.oh-my-zsh/"
 source ~/.bashrc
+eval $(thefuck --alias fuck)
+
 #
 #this might change in future
 source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -21,7 +23,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
-
+THEFUCK_REQUIRE_CONFIRMATION="false"
+ENABLE_CORRECTION="false"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
@@ -41,8 +44,6 @@ alias reload="source ~/.zshrc"
 alias fe="fedir && v"
 alias be="bedir && v"
 alias ms="msdir && v"
-alias vc="v ~/.config/nvim/init.vim"
-alias zconfig="v ~/.zshrc"
 alias dev="~/workspace/shell-scripts/work-shell/tmux-shell-script.sh"
 alias explore="vifm"
 alias vim="v"

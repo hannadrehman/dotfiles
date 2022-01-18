@@ -25,33 +25,45 @@ silent! if plug#begin('~/.nvim/plugged')
 "	PLUGINS
 "-----------------------------------------------------
 
-Plug 'editorconfig/editorconfig-vim'
-Plug 'dense-analysis/ale'
-Plug 'hoob3rt/lualine.nvim'
-Plug 'preservim/nerdcommenter'
+
+"icons
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+
+"lsp
+Plug 'nvim-lua/plenary.nvim'
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'neovim/nvim-lspconfig'
+"editor
+Plug 'editorconfig/editorconfig-vim'
+Plug 'dense-analysis/ale'
+Plug 'preservim/nerdcommenter'
+
+"window
+Plug 'hoob3rt/lualine.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'romgrk/barbar.nvim'
+
+"completion
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+"theme
 Plug 'EdenEast/nightfox.nvim'
+
+"code navigation
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'romgrk/barbar.nvim'
-Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
-Plug 'ray-x/navigator.lua'
-Plug 'tpope/vim-repeat'
 Plug 'phaazon/hop.nvim'
+
+
+"git
 Plug 'sindrets/diffview.nvim'
 
 
@@ -89,10 +101,10 @@ highlight Visual guifg=white guibg=#676FA3 gui=none
 hi CursorLine guibg=#2C2E43
 
 "transparent vim
-hi Normal guibg=NONE ctermbg=NONE
-hi NvimTreeNormal guibg=NONE ctermbg=NONE
-hi ActiveWindow guibg=NONE ctermbg=NONE
-hi InactiveWindow guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
+"hi NvimTreeNormal guibg=NONE ctermbg=NONE
+"hi ActiveWindow guibg=NONE ctermbg=NONE
+"hi InactiveWindow guibg=NONE ctermbg=NONE
 
 
 "linter
