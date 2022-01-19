@@ -14,14 +14,16 @@ export ZSH="/Users/hannadurrehman/.oh-my-zsh/"
 source ~/.bashrc
 eval $(thefuck --alias fuck)
 
-#
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
-ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
-THEFUCK_REQUIRE_CONFIRMATION="false"
 ENABLE_CORRECTION="false"
+
+unsetopt correct_all
+unsetopt correct
+
+export THEFUCK_REQUIRE_CONFIRMATION=false
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
