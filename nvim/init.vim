@@ -121,8 +121,7 @@ let g:javascript_plugin_jsdoc = 1
 
 
  "----------------------nvim-tree------------------------
- let g:nvim_tree_disable_window_picker = 1
-let g:nvim_tree_quit_on_open = 1
+let g:nvim_tree_disable_window_picker = 1
 let g:nvim_tree_git_hl = 1
 let g:nvim_tree_icon_padding = ' '
 let g:nvim_tree_highlight_opened_files = 1
