@@ -7,8 +7,16 @@ https://github.com/spaceship-prompt/spaceship-prompt#oh-my-zsh
 
 #plugins
 https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh
+
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+
 https://github.com/nvbn/thefuck#installation
+
 https://github.com/BurntSushi/ripgrep#installation
+
 https://github.com/ryanoasis/nerd-fonts
+
 https://github.com/romkatv/powerlevel10k
+
+# issues
+https://github.com/ohmyzsh/ohmyzsh/issues/7688#issuecomment-694825559

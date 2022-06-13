@@ -15,10 +15,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_DISABLE_COMPFIX=true
 export ZSH="/Users/hanad/.oh-my-zsh/"
 source ~/.bashrc
-eval $(thefuck --alias fuck)
 
 
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="false"
@@ -26,12 +25,11 @@ ENABLE_CORRECTION="false"
 unsetopt correct_all
 unsetopt correct
 
-export THEFUCK_REQUIRE_CONFIRMATION=false
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git zsh-autosuggestions)
+#plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -46,7 +44,7 @@ alias reload="source ~/.zshrc"
 alias fe="fedir && v"
 alias be="bedir && v"
 alias ms="msdir && v"
-alias dev="~/workspace/personal/dotfiles/tmux/tmux-shell-script.sh"
+alias dev="~/workspace/personal/dotfiles/shell/tmux-shell-script.sh"
 alias explore="vifm"
 alias vim="v"
 alias vi="v"
@@ -63,6 +61,8 @@ pyclean () {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #this might change in future
-# source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+ #source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
 

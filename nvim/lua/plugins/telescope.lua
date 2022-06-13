@@ -52,6 +52,7 @@ telescope.setup{
       previewer=false,
       layout_config = {
          width = 0.90,
+         height = 0.50,
       },
     },
     find_files = {
@@ -59,6 +60,7 @@ telescope.setup{
       previewer=false,
       layout_config = {
          width = 0.90,
+         height = 0.50,
       },
     },
     git_files = {
@@ -66,6 +68,7 @@ telescope.setup{
       previewer=false,
       layout_config = {
          width = 0.90,
+         height = 0.50,
       },
     },
     oldfiles = {
@@ -73,6 +76,7 @@ telescope.setup{
       previewer=false,
       layout_config = {
          width = 0.90,
+         height = 0.50,
       },
     }
   },
