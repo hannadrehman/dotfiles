@@ -11,3 +11,4 @@ https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 https://github.com/nvbn/thefuck#installation
 https://github.com/BurntSushi/ripgrep#installation
 https://github.com/ryanoasis/nerd-fonts
+https://github.com/romkatv/powerlevel10k
