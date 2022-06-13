@@ -46,3 +46,4 @@ tags
 !tags/
 tags.lock
 tags.temp
+.DS_Store

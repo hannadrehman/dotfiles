@@ -5,17 +5,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 # source hannad
 ZSH_DISABLE_COMPFIX=true
-export ZSH="/Users/hannadurrehman/.oh-my-zsh/"
+export ZSH="/Users/hanad/.oh-my-zsh/"
 source ~/.bashrc
 eval $(thefuck --alias fuck)
 
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="false"
@@ -60,6 +63,6 @@ pyclean () {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #this might change in future
-source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+# source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
