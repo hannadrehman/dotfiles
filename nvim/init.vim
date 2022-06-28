@@ -37,7 +37,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "editor
 Plug 'editorconfig/editorconfig-vim'
-Plug 'dense-analysis/ale'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'preservim/nerdcommenter'
 
 "window
@@ -62,7 +62,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'phaazon/hop.nvim'
 
-
 "git
 Plug 'sindrets/diffview.nvim'
 
@@ -86,6 +85,7 @@ lua require('plugins/treesitter')
 lua require('plugins/nvim-tree')
 lua require('plugins/hop')
 lua require('plugins/diffview')
+lua require('plugins/null-ls')
 
 "-----------------------------------------------------
 "       VARIABLES
@@ -99,23 +99,6 @@ highlight Cursor guifg=white guibg=white
 highlight iCursor guifg=white guibg=white
 highlight Visual guifg=white guibg=#676FA3 gui=none
 hi CursorLine guibg=#2C2E43
-
-"transparent vim
-"hi Normal guibg=NONE ctermbg=NONE
-"hi NvimTreeNormal guibg=NONE ctermbg=NONE
-"hi ActiveWindow guibg=NONE ctermbg=NONE
-"hi InactiveWindow guibg=NONE ctermbg=NONE
-
-
-"linter
-let g:ale_linter_aliases = {'jsx': ['javascript']}
-let g:ale_linters = {'typescript': ['eslint', 'prettier'], 'javascript': ['eslint', 'prettier'], 'typescriptreact': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier'], 'json':['prettier'], 'go': ['gopls']}
-let g:ale_fixers = {'typescript': ['eslint', 'prettier'],'javascript': ['eslint', 'prettier'],'typescriptreact': ['eslint', 'prettier'],'javascriptreact': ['eslint', 'prettier'],'html':['prettier'],  'json':['prettier'], 'rust': ['rustfmt'],'go': ['gofmt']}
-
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_save = 1
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = ''
 
 let g:javascript_plugin_jsdoc = 1
 

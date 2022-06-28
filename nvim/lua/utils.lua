@@ -6,7 +6,7 @@ function Module.map(mode, new, old, opts)
     if opts then
         options = vim.tbl_extend("force", options, opts)
     end
-    vim.api.nvim_set_keymap(mode, new, old, options)
+    vim.keymap.set(mode, new, old, options)
 end
 
 return Module

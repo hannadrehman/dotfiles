@@ -22,10 +22,11 @@ local on_attach = function(client, bufnr)
   map('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   map('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
+  client.resolved_capabilities.document_formatting = false
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
+ --Use a loop to conveniently call 'setup' on multiple servers and
+ --map buffer local keybindings when the language server attaches
 local servers = { "pyright",  "tsserver", "cssls", "gopls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
