@@ -1,16 +1,9 @@
 require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
-  auto_close          = true,
-  open_on_tab         = false,
-  hijack_cursor       = false,
   update_cwd          = false,
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
+  create_in_closed_folder = true,
+  respect_buf_cwd = true,
   diagnostics = {
     enable = false,
     icons = {
@@ -19,6 +12,31 @@ require'nvim-tree'.setup {
       warning = "",
       error = "",
     }
+  },
+  renderer = {
+      highlight_opened_files = true,
+      glyphs = {
+	      git= {
+		       unstaged= "",
+		       staged= "✓",
+		       unmerged= "",
+		       renamed= "➜",
+		       untracked= "★",
+		       deleted= "",
+		       ignored= "◌"
+	       },
+	       folder= {
+		       arrow_open= "",
+		       arrow_closed= "",
+		       default= "",
+		       open= "",
+		       empty= "",
+		       empty_open= "",
+		       symlink= "",
+		       symlink_open= "",
+	       },
+       }
+
   },
   update_focused_file = {
     enable      = false,
@@ -60,6 +78,9 @@ require'nvim-tree'.setup {
     open_file = {
       quit_on_open = true,
       resize_window = true,
+        window_picker = {
+            enable = false,
+          },
     }
   }
 }

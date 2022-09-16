@@ -39,6 +39,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'preservim/nerdcommenter'
+Plug 'nvim-treesitter/nvim-tree-docs'
 
 "window
 Plug 'hoob3rt/lualine.nvim'
@@ -86,6 +87,7 @@ lua require('plugins/nvim-tree')
 lua require('plugins/hop')
 lua require('plugins/diffview')
 lua require('plugins/null-ls')
+lua require('plugins/tree-docs')
 
 "-----------------------------------------------------
 "       VARIABLES
@@ -102,44 +104,6 @@ hi CursorLine guibg=#2C2E43
 
 let g:javascript_plugin_jsdoc = 1
 
-
- "----------------------nvim-tree------------------------
-let g:nvim_tree_disable_window_picker = 1
-let g:nvim_tree_git_hl = 1
-let g:nvim_tree_icon_padding = ' '
-let g:nvim_tree_highlight_opened_files = 1
-let g:nvim_tree_respect_buf_cwd = 1
-let g:nvim_tree_group_empty = 1
-let g:nvim_tree_highlight_opened_files = 1
-let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   },
-    \   'lsp': {
-    \     'hint': "",
-    \     'info': "",
-    \     'warning': "",
-    \     'error': "",
-    \   }
-    \ }
 
 "-----------------------------------------------------
 "      AUTO COMMANDS
