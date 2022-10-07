@@ -14,7 +14,8 @@ require'nvim-tree'.setup {
     }
   },
   renderer = {
-      highlight_opened_files = true,
+      highlight_opened_files = "yes",
+      icons= {
       glyphs = {
 	      git= {
 		       unstaged= "",
@@ -36,6 +37,7 @@ require'nvim-tree'.setup {
 		       symlink_open= "",
 	       },
        }
+       },
 
   },
   update_focused_file = {
@@ -58,17 +60,7 @@ require'nvim-tree'.setup {
   },
   view = {
     width = 60,
-    height = 60,
-    hide_root_folder = false,
     side = 'right',
-    auto_resize = false,
-    mappings = {
-      custom_only = false,
-      list = {}
-    },
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes"
   },
   trash = {
     cmd = "trash",

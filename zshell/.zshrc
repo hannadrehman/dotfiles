@@ -49,6 +49,7 @@ alias explore="vifm"
 alias vim="v"
 alias vi="v"
 alias jj="ssh jj"
+alias pcp="pwd|pbcopy"
 
 pyclean () {
     ZSH_PYCLEAN_PLACES=${*:-'.'}
