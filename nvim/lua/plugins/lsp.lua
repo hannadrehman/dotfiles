@@ -22,7 +22,7 @@ local on_attach = function(client, bufnr)
   map('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   map('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
-  client.resolved_capabilities.document_formatting = false
+  client.server_capabilities.document_formatting = false
 end
 
  --Use a loop to conveniently call 'setup' on multiple servers and
