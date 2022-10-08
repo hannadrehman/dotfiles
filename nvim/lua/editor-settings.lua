@@ -8,7 +8,7 @@ g.NERDCompactSexyComs = 1
 
 cmd "filetype plugin indent on"
 cmd "syntax on"
-cmd "colorscheme nightfox"
+cmd "colorscheme tarafox"
 cmd "set shortmess+=c"
 cmd "set guicursor=n-v-c:block-Cursor"
 cmd "set guicursor+=i:ver100-iCursor"
