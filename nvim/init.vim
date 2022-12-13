@@ -55,7 +55,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 "theme
-Plug 'projekt0n/github-nvim-theme'
+Plug 'ayu-theme/ayu-vim'
 
 "code navigation
 Plug 'nvim-lua/popup.nvim'

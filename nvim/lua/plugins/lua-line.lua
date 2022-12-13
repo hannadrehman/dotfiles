@@ -1,6 +1,6 @@
 require('lualine').setup{
 	options = {
-		theme="nightfox",
+		theme="ayu",
 		section_separators = {'', ''},
 		component_separators = {'', ''}
 	}
