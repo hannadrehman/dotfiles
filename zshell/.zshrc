@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(rbenv init - zsh)"
 
 
 # If you come from bash you might have to change your $PATH.
@@ -66,4 +67,6 @@ pyclean () {
  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
-
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
