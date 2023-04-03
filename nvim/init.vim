@@ -65,7 +65,7 @@ Plug 'phaazon/hop.nvim'
 
 "git
 Plug 'sindrets/diffview.nvim'
-Plug 'github/copilot.vim.git'
+Plug 'github/copilot.vim', {'branch': 'release'}
 
 
 
