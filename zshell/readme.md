@@ -9,7 +9,9 @@ https://github.com/spaceship-prompt/spaceship-prompt#oh-my-zsh
 https://github.com/junegunn/fzf
 
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
-https://github.com/zsh-users/zsh-autosuggestions/issues/416#issuecomment-579569896
+https://github.com/zsh-users/zsh-autosuggestions
+
+how ? https://github.com/zsh-users/zsh-autosuggestions/issues/416#issuecomment-579569896
 
 https://github.com/nvbn/thefuck#installation
 
