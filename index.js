@@ -6,7 +6,9 @@ const NVIM = `${homeDir}/.config/nvim/`;
 const ALACRITTY = `${homeDir}/.config/alacritty`
 const TMUX = `${homeDir}/.tmux.conf`;
 const ZSHRC = `${homeDir}/.zshrc`;
-const RECURSIVE = {recursive: true}
+const OPTIONS = {recursive: true, }
+
+
 
 async function copy(source,dest,options){
    try {
@@ -22,7 +24,24 @@ async function copy(source,dest,options){
 
 }
 
-copy(`${process.cwd()}/nvim/`,NVIM, RECURSIVE )
-copy(`${process.cwd()}/alacritty/`,ALACRITTY, RECURSIVE )
-copy(`${process.cwd()}/tmux/.tmux.conf`,TMUX,  )
-copy(`${process.cwd()}/zshell/.zshrc`,ZSHRC,  )
+
+
+async function write(source,data='',options){
+   try {
+    await fsPromises.writeFile(source,data,options)
+    console.log('Successfully written ',source)
+   }
+   catch(e){
+    console.log(e);
+   }
+
+}
+
+
+write(ZSHRC)
+write(TMUX)
+
+copy(`${process.cwd()}/nvim/`,NVIM, OPTIONS )
+copy(`${process.cwd()}/alacritty/`,ALACRITTY, OPTIONS )
+copy(`${process.cwd()}/tmux/.tmux.conf`,TMUX, )
+copy(`${process.cwd()}/zshell/.zshrc`,ZSHRC, )

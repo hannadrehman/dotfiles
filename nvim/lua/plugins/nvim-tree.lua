@@ -2,7 +2,6 @@ require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
   update_cwd          = false,
-  create_in_closed_folder = true,
   respect_buf_cwd = true,
   diagnostics = {
     enable = false,
