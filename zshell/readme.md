@@ -8,6 +8,9 @@ https://github.com/spaceship-prompt/spaceship-prompt#oh-my-zsh
 #plugins
 https://github.com/junegunn/fzf
 
+for key binding error look at this https://github.com/junegunn/fzf/issues/846#issuecomment-280822238
+
+
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
 
 https://github.com/zsh-users/zsh-autosuggestions
