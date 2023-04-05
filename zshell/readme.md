@@ -18,5 +18,8 @@ https://github.com/ryanoasis/nerd-fonts
 
 https://github.com/romkatv/powerlevel10k
 
+brew install rbenv ruby-build
+
+
 # issues
 https://github.com/ohmyzsh/ohmyzsh/issues/7688#issuecomment-694825559
