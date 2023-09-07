@@ -81,3 +81,5 @@ telescope.setup{
     }
   },
 }
+
+ map('n', '<leader>fl', "<cmd>lua require'telescope.builtin'.resume() <CR>", {})
