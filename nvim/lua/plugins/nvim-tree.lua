@@ -13,7 +13,7 @@ require'nvim-tree'.setup {
     }
   },
   renderer = {
-      highlight_opened_files = "yes",
+      highlight_opened_files = "all",
       icons= {
       glyphs = {
 	      git= {
@@ -39,23 +39,8 @@ require'nvim-tree'.setup {
        },
 
   },
-  update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
-    ignore_list = {}
-  },
-  system_open = {
-    cmd  = nil,
-    args = {}
-  },
   filters = {
     dotfiles = true,
-    custom = {}
-  },
-  git = {
-    enable = true,
-    ignore = true,
-    timeout = 500,
   },
   view = {
     width = 60,
@@ -68,7 +53,6 @@ require'nvim-tree'.setup {
   actions = {
     open_file = {
       quit_on_open = true,
-      resize_window = true,
         window_picker = {
             enable = false,
           },

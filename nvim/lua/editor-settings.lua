@@ -8,7 +8,6 @@ g.NERDCompactSexyComs = 1
 
 cmd "filetype plugin indent on"
 cmd "syntax on"
-cmd "colorscheme ayu"
 cmd "set shortmess+=c"
 cmd "set guicursor=n-v-c:block-Cursor"
 cmd "set guicursor+=i:ver100-iCursor"
@@ -21,8 +20,6 @@ cmd "set nocursorline"
 cmd "let loaded_netrwPlugin = 1"
 cmd "set nobackup"
 cmd "set nowritebackup"
-
-
 
 opt.ic = true
 opt.relativenumber = true

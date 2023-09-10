@@ -45,6 +45,7 @@ Plug 'nvim-treesitter/nvim-tree-docs'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'romgrk/barbar.nvim'
+Plug 'startup-nvim/startup.nvim'
 
 "completion
 Plug 'hrsh7th/nvim-cmp'
@@ -55,7 +56,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 "theme
-Plug 'ayu-theme/ayu-vim'
+Plug 'projekt0n/github-nvim-theme'
 
 "code navigation
 Plug 'nvim-lua/popup.nvim'
@@ -88,7 +89,8 @@ lua require('plugins/nvim-tree')
 lua require('plugins/hop')
 lua require('plugins/git-conflict')
 lua require('plugins/null-ls')
-lua require('plugins/tree-docs')
+lua require('plugins/theme')
+lua require('plugins/dashboard')
 
 "-----------------------------------------------------
 "       VARIABLES
