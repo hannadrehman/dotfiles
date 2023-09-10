@@ -23,7 +23,7 @@ font:
 # set by alacritty itself.
 
 window:
-  opacity: 0.85
+  opacity: 0.90
 
 env:
   TERM: xterm-256color

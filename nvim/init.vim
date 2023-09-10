@@ -57,6 +57,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 
 "theme
 Plug 'projekt0n/github-nvim-theme'
+Plug 'xiyaowong/transparent.nvim'
 
 "code navigation
 Plug 'nvim-lua/popup.nvim'

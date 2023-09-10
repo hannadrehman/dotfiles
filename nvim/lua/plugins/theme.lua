@@ -1,12 +1,22 @@
 require('github-theme').setup({})
-local hi = require('utils').hi
+local transparent = require('transparent')
 
+transparent.setup({
+ extra_groups = {
+    "NvimTreeNormal" -- NvimTree
+  },
+})
+
+
+
+local hi = require('utils').hi
 local cmd = vim.cmd
+
+transparent.clear_prefix('lualine')
+
 
 vim.cmd('colorscheme github_dark_tritanopia')
 
-hi("Normal", {ctermbg = "NONE", guibg = "NONE"})
-hi("NonText", {ctermbg = "NONE", guibg = "NONE"})
-hi('NvimTreeNormal', {guibg = "NONE"})
+hi("CursorLine", {guibg = "#191919", guifg = "fg"})
 
 
