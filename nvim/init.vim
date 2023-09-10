@@ -64,7 +64,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'phaazon/hop.nvim'
 
 "git
-Plug 'sindrets/diffview.nvim'
+Plug 'akinsho/git-conflict.nvim'
 Plug 'github/copilot.vim', {'branch': 'release'}
 
 
@@ -86,7 +86,7 @@ lua require('plugins/cmp')
 lua require('plugins/treesitter')
 lua require('plugins/nvim-tree')
 lua require('plugins/hop')
-lua require('plugins/diffview')
+lua require('plugins/git-conflict')
 lua require('plugins/null-ls')
 lua require('plugins/tree-docs')
 
