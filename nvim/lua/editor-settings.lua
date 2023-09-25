@@ -41,4 +41,4 @@ opt.background="dark"
 opt.termguicolors = true
 opt.syntax = 'on'
 opt.cursorline = true
-
+opt.mouse = ""
