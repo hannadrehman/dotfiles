@@ -20,6 +20,15 @@ cmd "set nocursorline"
 cmd "let loaded_netrwPlugin = 1"
 cmd "set nobackup"
 cmd "set nowritebackup"
+cmd "set completeopt=menuone"
+cmd "set shiftwidth=2"
+cmd "set smarttab"
+cmd "set splitbelow"
+cmd "set splitright"
+cmd "set tabstop=2"
+cmd "set termguicolors"
+cmd "set title"
+cmd "set wrap"
 
 opt.ic = true
 opt.relativenumber = true
@@ -42,3 +51,4 @@ opt.termguicolors = true
 opt.syntax = 'on'
 opt.cursorline = true
 opt.mouse = ""
+

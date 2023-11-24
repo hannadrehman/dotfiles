@@ -40,6 +40,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'preservim/nerdcommenter'
 Plug 'nvim-treesitter/nvim-tree-docs'
+Plug 'windwp/nvim-autopairs'
+Plug 'chikko80/error-lens.nvim'
 
 "window
 Plug 'hoob3rt/lualine.nvim'
@@ -92,6 +94,8 @@ lua require('plugins/git-conflict')
 lua require('plugins/null-ls')
 lua require('plugins/theme')
 lua require('plugins/dashboard')
+lua require('plugins/autopair')
+lua require('plugins/error-lens')
 
 "-----------------------------------------------------
 "       VARIABLES

@@ -1,7 +1,9 @@
 require('lualine').setup{
 	options = {
-		theme="ayu",
+            	theme = 'auto',
 		section_separators = {'', ''},
-		component_separators = {'', ''}
+		component_separators = {'', ''},
+		padding = { top=1, bottom=1 }
+
 	}
 }
