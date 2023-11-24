@@ -38,7 +38,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "editor
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'preservim/nerdcommenter'
+Plug 'numToStr/Comment.nvim'
 Plug 'nvim-treesitter/nvim-tree-docs'
 Plug 'windwp/nvim-autopairs'
 Plug 'chikko80/error-lens.nvim'
@@ -96,6 +96,7 @@ lua require('plugins/theme')
 lua require('plugins/dashboard')
 lua require('plugins/autopair')
 lua require('plugins/error-lens')
+lua require('plugins/comment')
 
 "-----------------------------------------------------
 "       VARIABLES
