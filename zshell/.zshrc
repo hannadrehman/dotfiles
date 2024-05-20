@@ -22,7 +22,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="false"
-
+BAT_THEME="Dracula"
+EDITOR="nvim"
 unsetopt correct_all
 unsetopt correct
 
@@ -59,6 +60,18 @@ pyclean () {
     find ${ZSH_PYCLEAN_PLACES} -type d -name ".mypy_cache" -delete
 }
 
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -70,3 +83,6 @@ pyclean () {
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+eval "$(zoxide init zsh)"
+
