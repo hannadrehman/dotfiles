@@ -6,3 +6,10 @@ install necessary lsp servers from [here](https://github.com/neovim/nvim-lspconf
 
 # Install language parsers
 :TSInstall <language_to_install>
+
+:TSInstall typescript
+:TSInstall css
+:TSInstall scss
+:TSInstall go
+:TSInstall javascript
+
