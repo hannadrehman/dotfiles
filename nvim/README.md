@@ -12,4 +12,5 @@ install necessary lsp servers from [here](https://github.com/neovim/nvim-lspconf
 :TSInstall scss
 :TSInstall go
 :TSInstall javascript
+:TSInstall vim
 
