@@ -42,6 +42,7 @@ https://github.com/tldr-pages/tldr
 https://github.com/sgentle/caniuse-cmd
 
 https://github.com/GitSquared/edex-ui?tab=readme-ov-file
+https://github.com/Schniz/fnm
 
 
 # issues

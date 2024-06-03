@@ -5,8 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(rbenv init - zsh)"
+eval "$(zoxide init zsh)"
+eval "$(fnm env --use-on-cd)"
 
 
 # If you come from bash you might have to change your $PATH.
@@ -15,7 +16,6 @@ eval "$(rbenv init - zsh)"
 # source hannad
 ZSH_DISABLE_COMPFIX=true
 export ZSH="/Users/hanad/.oh-my-zsh/"
-source ~/.bashrc
 
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -38,20 +38,12 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias fedir="cd ~/workspace/"
-alias bedir="cd ~/workspace/"
-alias msdir="cd ~/workspace/projects/mock-server"
 alias v="nvim"
 alias reload="source ~/.zshrc"
-alias fe="fedir && v"
-alias be="bedir && v"
-alias ms="msdir && v"
-alias dev="~/workspace/personal/dotfiles/shell/tmux-shell-script.sh"
-alias explore="vifm"
+alias dev="~/workspace/projects/dotfiles/shell/tmux-shell-script.sh"
 alias vim="v"
 alias vi="v"
-alias jj="ssh jj"
-alias pcp="pwd|pbcopy"
+alias cat=bat
 
 pyclean () {
     ZSH_PYCLEAN_PLACES=${*:-'.'}
@@ -77,12 +69,10 @@ function yy() {
 
 #this might change in future
  #source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
- source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-
-eval "$(zoxide init zsh)"
 
