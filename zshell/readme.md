@@ -1,4 +1,4 @@
-# install
+j# install
 install oh my zsh https://ohmyz.sh
 
 

@@ -14,3 +14,6 @@ install necessary lsp servers from [here](https://github.com/neovim/nvim-lspconf
 :TSInstall javascript
 :TSInstall vim
 
+
+### Fixes unresponsiveness of large projects
+https://github.com/emcrisostomo/fswatch?tab=readme-ov-file#installation
