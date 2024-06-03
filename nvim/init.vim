@@ -95,7 +95,6 @@ lua require('plugins/null-ls')
 lua require('plugins/theme')
 lua require('plugins/dashboard')
 lua require('plugins/autopair')
-lua require('plugins/error-lens')
 lua require('plugins/comment')
 
 "-----------------------------------------------------
