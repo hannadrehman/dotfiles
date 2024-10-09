@@ -10,7 +10,7 @@ git clone https://github.com/hannadrehman/dotfiles.git ~/dotfiles
 
 cd ~/dotfiles
 
-brew install vim tmux zsh git alacritty
+brew install neovim tmux zsh alacritty
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
