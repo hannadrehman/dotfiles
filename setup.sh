@@ -17,6 +17,7 @@ ln -sf "$(pwd)/nvim" ~/.config/nvim
 ln -sf "$(pwd)/tmux/.tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/zshell/.zshrc" ~/.zshrc
 ln -sf "$(pwd)/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
+ln -sf "$(pwd)/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
 
 source ~/.zshrc
 

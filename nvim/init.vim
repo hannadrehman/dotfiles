@@ -42,6 +42,7 @@ Plug 'numToStr/Comment.nvim'
 Plug 'nvim-treesitter/nvim-tree-docs'
 Plug 'windwp/nvim-autopairs'
 Plug 'chikko80/error-lens.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 "window
 Plug 'hoob3rt/lualine.nvim'
@@ -69,8 +70,8 @@ Plug 'phaazon/hop.nvim'
 
 "git
 Plug 'akinsho/git-conflict.nvim'
-Plug 'github/copilot.vim', {'branch': 'release'}
-
+Plug 'zbirenbaum/copilot.lua'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 
 
 call plug#end()
@@ -96,6 +97,8 @@ lua require('plugins/theme')
 lua require('plugins/dashboard')
 lua require('plugins/autopair')
 lua require('plugins/comment')
+lua require('plugins/ibl')
+lua require('plugins/error-lens')
 
 "-----------------------------------------------------
 "       VARIABLES

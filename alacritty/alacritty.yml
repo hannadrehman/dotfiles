@@ -22,8 +22,6 @@ font:
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 
-window:
-  opacity: 0.90
 
 env:
   TERM: xterm-256color
