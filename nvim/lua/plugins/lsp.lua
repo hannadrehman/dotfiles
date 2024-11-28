@@ -29,6 +29,9 @@ end
  --map buffer local keybindings when the language server attaches
 local servers = { "pyright",  "tsserver", "cssls", "gopls"}
 for _, lsp in ipairs(servers) do
+	if lsp == "tsserver" then
+		lsp = "ts_ls"
+	end
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     flags = {
