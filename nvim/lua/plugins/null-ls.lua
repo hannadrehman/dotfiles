@@ -1,5 +1,6 @@
 
 require("null-ls").setup({
+		root_dir = require("null-ls.utils").root_pattern(".git", "package.json"),
     debounce = 150,
     sources = {
         require("null-ls").builtins.formatting.prettier,

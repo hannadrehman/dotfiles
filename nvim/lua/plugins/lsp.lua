@@ -27,7 +27,7 @@ end
 
  --Use a loop to conveniently call 'setup' on multiple servers and
  --map buffer local keybindings when the language server attaches
-local servers = { "pyright",  "tsserver", "cssls", "gopls"}
+local servers = { "pyright",  "tsserver", "cssls", "gopls", "svelte"}
 for _, lsp in ipairs(servers) do
 	if lsp == "tsserver" then
 		lsp = "ts_ls"
