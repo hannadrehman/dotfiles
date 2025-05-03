@@ -11,7 +11,7 @@ eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd)"
 
 # Oh-My-Zsh Configuration
-export ZSH="/Users/hanad/.oh-my-zsh"
+export ZSH="/Users/hannadrehman/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX=true
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -26,7 +26,7 @@ export EDITOR="nvim"
 export PATH=$PATH:$HOME/Library/Android/sdk/emulator
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export PATH="/Users/hanad/.rd/bin:$PATH" # Managed by Rancher Desktop
+export PATH="/Users/hannadrehman/.rd/bin:$PATH" # Managed by Rancher Desktop
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
@@ -56,12 +56,14 @@ function yy() {
 }
 
 # Source additional tools
-. "/Users/hanad/.deno/env"
+# . "/Users/hannadrehman/.deno/env"
 source <(fzf --zsh)
 
 # Load Powerlevel10k configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/hanad/.rd/bin:$PATH"
+export PATH="/Users/hannadrehman/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+export PATH=/Users/hannadrehman/.rd/bin:/Users/hannadrehman/.rd/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/hannadrehman/Library/Android/sdk/emulator:/Users/hannadrehman/Library/Android/sdk/platform-tools:/opt/homebrew/bin:/opt/homebrew/bin
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
