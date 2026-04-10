@@ -1,14 +1,20 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
+# Initialization code for rbenv, zoxide, fnm, and pyenv.
+# Must run before Powerlevel10k instant prompt to avoid console output warnings.
+eval "$(rbenv init - zsh)"
+eval "$(zoxide init zsh)"
+eval "$(fnm env --use-on-cd)"
+eval "$(pyenv virtualenv-init -)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# Initialization code for rbenv, zoxide, and fnm.
-eval "$(rbenv init - zsh)"
-eval "$(zoxide init zsh)"
-eval "$(fnm env --use-on-cd)"
 
 # Oh-My-Zsh Configuration
 export ZSH="/Users/hannadrehman/.oh-my-zsh"
@@ -65,5 +71,21 @@ source <(fzf --zsh)
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/hannadrehman/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-export PATH=/Users/hannadrehman/.rd/bin:/Users/hannadrehman/.rd/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/hannadrehman/Library/Android/sdk/emulator:/Users/hannadrehman/Library/Android/sdk/platform-tools:/opt/homebrew/bin:/opt/homebrew/bin
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# bun completions
+[ -s "/Users/hanad/.bun/_bun" ] && source "/Users/hanad/.bun/_bun"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+# opencode
+export PATH=/Users/hanad/.opencode/bin:$PATH
+
+# Entire CLI shell completion
+autoload -Uz compinit && compinit && source <(entire completion zsh)
+
+# hr-agents update check hook
+[ -f "${HOME}/.hr-agents/shell/hr-agents-init.sh" ] && source "${HOME}/.hr-agents/shell/hr-agents-init.sh"
