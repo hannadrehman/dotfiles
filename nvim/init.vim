@@ -69,9 +69,6 @@ Plug 'phaazon/hop.nvim'
 
 "git
 Plug 'akinsho/git-conflict.nvim'
-Plug 'zbirenbaum/copilot.lua'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
-
 
 call plug#end()
 "----------------------------------------------------
