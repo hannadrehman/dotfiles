@@ -33,11 +33,12 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 "lsp
 Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master', 'do': ':TSUpdate'}
 
 "editor
 Plug 'editorconfig/editorconfig-vim'
 Plug 'nvimtools/none-ls.nvim'
+Plug 'nvimtools/none-ls-extras.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'nvim-treesitter/nvim-tree-docs'
 Plug 'windwp/nvim-autopairs'

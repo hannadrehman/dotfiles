@@ -4,7 +4,7 @@ require("null-ls").setup({
     debounce = 150,
     sources = {
         require("null-ls").builtins.formatting.prettier,
-        require("null-ls").builtins.diagnostics.eslint,
+        require("none-ls.diagnostics.eslint"),
         require("null-ls").builtins.completion.spell,
 	require("null-ls").builtins.diagnostics.stylelint
     },
