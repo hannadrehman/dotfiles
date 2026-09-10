@@ -16,6 +16,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Initialization code for rbenv, zoxide, and fnm.
+eval "$(zoxide init zsh)"
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 # Oh-My-Zsh Configuration
 export ZSH="/Users/hannadrehman/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX=true
