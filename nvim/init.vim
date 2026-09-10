@@ -37,7 +37,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "editor
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'nvimtools/none-ls.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'nvim-treesitter/nvim-tree-docs'
 Plug 'windwp/nvim-autopairs'
@@ -65,7 +65,7 @@ Plug 'xiyaowong/transparent.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'phaazon/hop.nvim'
+Plug 'smoka7/hop.nvim'
 
 "git
 Plug 'akinsho/git-conflict.nvim'
