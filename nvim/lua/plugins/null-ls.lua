@@ -6,7 +6,7 @@ require("null-ls").setup({
         require("null-ls").builtins.formatting.prettier,
         require("none-ls.diagnostics.eslint"),
         require("null-ls").builtins.completion.spell,
-	require("null-ls").builtins.diagnostics.stylelint
+	      require("null-ls").builtins.diagnostics.stylelint
     },
     on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
