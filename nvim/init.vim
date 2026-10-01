@@ -1,77 +1,3 @@
-" Automatic installation of vim-plug, if it's not available
-" ----------------------------------------
-
-if empty(glob('~/.nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs
-	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-
-"-----------------------------------------
-" Automatically install missing plugins on startup
-"-----------------------------------------
-
-autocmd VimEnter *
-      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-      \|   PlugInstall --sync | q
-      \| endif
-"-----------------------------------------
-
-silent! if plug#begin('~/.nvim/plugged')
-
-
-"-----------------------------------------------------
-"	PLUGINS
-"-----------------------------------------------------
-
-
-"icons
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-
-"lsp
-Plug 'nvim-lua/plenary.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master', 'do': ':TSUpdate'}
-
-"editor
-Plug 'editorconfig/editorconfig-vim'
-Plug 'nvimtools/none-ls.nvim'
-Plug 'nvimtools/none-ls-extras.nvim'
-Plug 'numToStr/Comment.nvim'
-Plug 'nvim-treesitter/nvim-tree-docs'
-Plug 'windwp/nvim-autopairs'
-Plug 'chikko80/error-lens.nvim'
-Plug 'lukas-reineke/indent-blankline.nvim'
-
-"window
-Plug 'hoob3rt/lualine.nvim'
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'romgrk/barbar.nvim'
-Plug 'startup-nvim/startup.nvim'
-
-"completion
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-
-"theme
-Plug 'projekt0n/github-nvim-theme'
-Plug 'xiyaowong/transparent.nvim'
-
-"code navigation
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'smoka7/hop.nvim'
-
-"git
-Plug 'akinsho/git-conflict.nvim'
-
-call plug#end()
 "----------------------------------------------------
 "-------lua imports
 
@@ -79,23 +5,8 @@ call plug#end()
 lua require('key-bindings')
 lua require('editor-settings')
 
-"plugins
-lua require('plugins/lsp')
-lua require('plugins/telescope')
-lua require('plugins/lua-line')
-lua require('plugins/barbar')
-lua require('plugins/cmp')
-lua require('plugins/treesitter')
-lua require('plugins/nvim-tree')
-lua require('plugins/hop')
-lua require('plugins/git-conflict')
-lua require('plugins/null-ls')
-lua require('plugins/theme')
-lua require('plugins/dashboard')
-lua require('plugins/autopair')
-lua require('plugins/comment')
-lua require('plugins/ibl')
-lua require('plugins/error-lens')
+"plugins (configs in lua/plugins/ are loaded on demand by lazy.nvim)
+lua require('lazy-setup')
 
 "-----------------------------------------------------
 "       VARIABLES
@@ -161,4 +72,3 @@ function! Handle_Win_Enter()
 endfunction
 
 "----------------split screen navigation---------------------
-endif
