@@ -28,13 +28,28 @@ end
  --map buffer local keybindings when the language server attaches
 local servers = { "pyright", "ts_ls", "cssls", "gopls", "svelte" }
 for _, server in ipairs(servers) do
-  vim.lsp.config(server, {
+  local config = {
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     },
     capabilities = require('cmp_nvim_lsp').default_capabilities()
-  })
+  }
+
+  if server == "gopls" then
+    config.settings = {
+      gopls = {
+        gofumpt = true,
+        staticcheck = true,
+        analyses = {
+          unusedparams = true,
+          shadow = true,
+        },
+      },
+    }
+  end
+
+  vim.lsp.config(server, config)
   vim.lsp.enable(server)
 end
 

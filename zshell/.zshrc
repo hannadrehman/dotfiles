@@ -6,7 +6,7 @@
 # Must run before Powerlevel10k instant prompt to avoid console output warnings.
 eval "$(rbenv init - zsh)"
 eval "$(zoxide init zsh)"
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(pyenv virtualenv-init -)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -16,12 +16,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Initialization code for rbenv, zoxide, and fnm.
-eval "$(zoxide init zsh)"
-eval "$(fnm env --use-on-cd --shell zsh)"
-
 # Oh-My-Zsh Configuration
-export ZSH="/Users/hannadrehman/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX=true
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -33,6 +29,7 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Environment variables
 export BAT_THEME="Dracula"
 export EDITOR="nvim"
+export RTK_DB_PATH="$HOME/.codex/memories/rtk/history.db"
 export PATH=$PATH:$HOME/Library/Android/sdk/emulator
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
@@ -91,5 +88,3 @@ export PATH=/Users/hanad/.opencode/bin:$PATH
 # Entire CLI shell completion
 autoload -Uz compinit && compinit && source <(entire completion zsh)
 
-# hr-agents update check hook
-[ -f "${HOME}/.hr-agents/shell/hr-agents-init.sh" ] && source "${HOME}/.hr-agents/shell/hr-agents-init.sh"
