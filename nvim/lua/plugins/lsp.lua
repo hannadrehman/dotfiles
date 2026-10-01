@@ -1,4 +1,3 @@
-local nvim_lsp = require('lspconfig')
 local map = require('utils').map
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -27,11 +26,8 @@ end
 
  --Use a loop to conveniently call 'setup' on multiple servers and
  --map buffer local keybindings when the language server attaches
-local servers = { "pyright",  "tsserver", "cssls", "gopls", "svelte"}
-for _, lsp in ipairs(servers) do
-	if lsp == "tsserver" then
-		lsp = "ts_ls"
-	end
+local servers = { "pyright", "ts_ls", "cssls", "gopls", "svelte" }
+for _, server in ipairs(servers) do
   local config = {
     on_attach = on_attach,
     flags = {
@@ -40,7 +36,7 @@ for _, lsp in ipairs(servers) do
     capabilities = require('cmp_nvim_lsp').default_capabilities()
   }
 
-  if lsp == "gopls" then
+  if server == "gopls" then
     config.settings = {
       gopls = {
         gofumpt = true,
@@ -53,7 +49,8 @@ for _, lsp in ipairs(servers) do
     }
   end
 
-  nvim_lsp[lsp].setup(config)
+  vim.lsp.config(server, config)
+  vim.lsp.enable(server)
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

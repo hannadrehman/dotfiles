@@ -5,9 +5,9 @@ require("null-ls").setup({
     sources = {
         require("null-ls").builtins.formatting.prettier,
         require("null-ls").builtins.formatting.gofmt,
-        require("null-ls").builtins.diagnostics.eslint,
+        require("none-ls.diagnostics.eslint"),
         require("null-ls").builtins.completion.spell,
-	require("null-ls").builtins.diagnostics.stylelint
+	      require("null-ls").builtins.diagnostics.stylelint
     },
     on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
