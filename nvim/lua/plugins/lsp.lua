@@ -32,13 +32,28 @@ for _, lsp in ipairs(servers) do
 	if lsp == "tsserver" then
 		lsp = "ts_ls"
 	end
-  nvim_lsp[lsp].setup {
+  local config = {
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     },
     capabilities = require('cmp_nvim_lsp').default_capabilities()
   }
+
+  if lsp == "gopls" then
+    config.settings = {
+      gopls = {
+        gofumpt = true,
+        staticcheck = true,
+        analyses = {
+          unusedparams = true,
+          shadow = true,
+        },
+      },
+    }
+  end
+
+  nvim_lsp[lsp].setup(config)
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -47,4 +62,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   signs = true,
   update_in_insert = false,
 })
-

@@ -29,6 +29,7 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Environment variables
 export BAT_THEME="Dracula"
 export EDITOR="nvim"
+export RTK_DB_PATH="$HOME/.codex/memories/rtk/history.db"
 export PATH=$PATH:$HOME/Library/Android/sdk/emulator
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
@@ -87,5 +88,3 @@ export PATH=/Users/hanad/.opencode/bin:$PATH
 # Entire CLI shell completion
 autoload -Uz compinit && compinit && source <(entire completion zsh)
 
-# hr-agents update check hook
-[ -f "${HOME}/.hr-agents/shell/hr-agents-init.sh" ] && source "${HOME}/.hr-agents/shell/hr-agents-init.sh"
